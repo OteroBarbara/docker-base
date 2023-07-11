@@ -6,5 +6,9 @@ services:
     build: 
       context: ./frontend
       dockerfile: ../docker/Dockerfile-frontend
+    container_name: klinicos_front
+    volumes:
+      - ./frontend:/app
+    restart: unless-stopped
     ports:
       - 3000:3000
