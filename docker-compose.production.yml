@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  app:
+    image: docker-nextjs
+    build: 
+      context: ./frontend
+      dockerfile: ../docker/Dockerfile-frontend.production
+    container_name: klinicos_front
+    restart: unless-stopped
+    ports:
+      - 3000:3000
